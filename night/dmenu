@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# screen position
+screen_geometry="$(xrandr -d "${DISPLAY}" --query | grep ' primary ' | sed -n '1p' | grep -o -e '[0-9]\+x[0-9]\+')"
+screen_width="$(echo "${screen_geometry}" | cut -d'x' -f1)"
+screen_height="$(echo "${screen_geometry}" | cut -d'x' -f2)"
+
+# dmenu width and height
+width=700
+height=$(( 20 * 18 ))
+
+# execute dmenu
+j4-dmenu-desktop --dmenu="/home/neo/Projekte/C/dmenu2/dmenu -f -q -i -spotlight -p '' -l 20 -x $(((${screen_width} - ${width}) / 2)) -y $(((${screen_height} - ${height}) / 2)) -w ${width} -sb '#DD848484' -sf '#ffffff' -nb '#DD171717' -nf '#ffffff' -fn 'Terminesspowerline:size=10'"

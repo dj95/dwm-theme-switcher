@@ -1,0 +1,173 @@
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
+syntax on
+set number
+set t_Co=256
+colorscheme github
+set background=light
+"highlight Normal ctermbg=NONE
+set encoding=utf8
+set cursorline
+set showcmd
+
+let mapleader = ","
+
+"set mouse=a
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+" mark chars over 80 characters red
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
+
+" Statusbar
+set laststatus=2
+
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'lucius2'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tagbar#enabled = 0
+
+set timeoutlen=500 ttimeoutlen=500
+
+" Tmuxline
+let g:airline#extensions#tmuxline#enabled = 1
+let airline#extensions#tmuxline#snapshot_file = "~/.tmux-status.conf"
+
+
+" Commands
+let mapleader = ","
+map <C-n> :NERDTreeToggle<CR>
+nmap <C-j> :bp<CR>
+nmap <C-k> :bn<CR>
+nnoremap <leader>m :w<CR> :call VimuxRunCommand("make")<CR>
+nnoremap <leader>g :w<CR> :call VimuxRunCommand("gulp dev")<CR>
+nmap <leader>t :CommandT<CR>
+nmap <leader>b :CommandTBuffer<CR>
+
+" minimap
+let g:minimap_show='<leader>ms'
+let g:minimap_update='<leader>mu'
+let g:minimap_close='<leader>gc'
+let g:minimap_toggle='<leader>gt'
+
+" Snippets
+nnoremap <leader>py :-1read $HOME/.vim/snippets/skeleton.py<CR>8jO
+nnoremap <leader>html :-1read $HOME/.vim/snippets/skeleton.html<CR>3jwf>a
+nnoremap <leader>c :-1read $HOME/.vim/snippets/skeleton.c<CR>5jO
+nnoremap <leader>sh :-1read $HOME/.vim/snippets/skeleton.sh<CR>6ji
+
+
+" let me learn
+nnoremap <Up> :echomsg "use k"<cr>
+nnoremap <Down> :echomsg "use j"<cr>
+nnoremap <Left> :echomsg "use h"<cr>
+nnoremap <Right> :echomsg "use l"<cr>
+
+
+if !has('nvim')
+    set ttymouse=xterm2
+endif
+
+if has('nvim')
+    set clipboard=unnamed
+    set clipboard+=unnamedplus
+    let g:deoplete#enable_at_startup = 1
+endif
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+set autoread
+set ttyfast
+set lazyredraw
+set title
+set noshowmode
+
+" set the runtime path to include Vundle and initialize
+"set rtp+=~/.vim/bundle/Vundle.vim
+call plug#begin('~/.vim/plugged')
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+"Plugin 'gmarik/Vundle.vim'
+
+" surround
+Plug 'tpope/vim-surround'
+
+
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plug 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+Plug 'L9'
+" Git plugin not hosted on GitHub
+Plug 'git://github.com/wincent/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+" Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Avoid a name conflict with L9
+" Plugin 'user/L9', {'name': 'newL9'}
+
+" Syntastic
+Plug 'git://github.com/scrooloose/syntastic.git'
+
+" Code Completion
+" Plugin 'git://github.com/justmao945/vim-clang.git'
+Plug 'justmao945/vim-clang'
+Plug 'bling/vim-airline'
+Plug 'scrooloose/nerdtree'
+Plug 'edkolev/tmuxline.vim'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'git://github.com/jiangmiao/auto-pairs.git'
+Plug 'airblade/vim-gitgutter'
+Plug 'git://github.com/vim-utils/vim-man.git'
+Plug 'git://github.com/fs111/pydoc.vim.git'
+Plug 'junegunn/vim-easy-align'
+Plug 'zchee/deoplete-jedi'
+
+Plug 'benmills/vimux'
+Plug 'severin-lemaignan/vim-minimap'
+
+function! DoRemote(arg)
+  UpdateRemotePlugins
+endfunction
+Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+
+" All of your Plugins must be added before the following line
+call plug#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+"
+"
+"
+" Auto-Complete
+let g:clang_c_options = '-std=gnu11'
+let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
+
+augroup reload_vimrc " {
+    autocmd!
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END " }
+
+"set runtimepath+=~/.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim74,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after
