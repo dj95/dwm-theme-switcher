@@ -7,6 +7,8 @@ of dwm, neovim, dmenu, dunst and termite while running them.
 The script is easy to extend for further programs
 and multiple themes.
 
+![demo](./demo.gif)
+
 
 ### Requirements
 
