@@ -1,0 +1,156 @@
+UXTerm*foreground: white
+UXTerm*background: black
+!UXTerm*faceName: Fira Mono Medium for Powerline
+UXTerm*faceName: DejaVu Sans Mono for Powerline
+UXTerm*faceSize: 9
+
+XTerm*foreground: white
+XTerm*background: black
+!UXTerm*faceName: Fira Mono Medium for Powerline
+XTerm*faceName: DejaVu Sans Mono for Powerline
+XTerm*faceSize: 9
+
+QuakeDD*.depth: 32
+QuakeDD*.transparent: false
+QuakeDD.background: [100]#121212
+QuakeDD.foreground: #BDBDBD
+QuakeDD.scrollBar: false
+!QuakeDD.font: xft:DejaVu Sans Mono for Powerline Book:size=10
+QuakeDD.font: -*-terminesspowerline-medium-r-normal-*-12-*-*-*-*-*-*-*
+
+QuakeDD.perl-ext: default,url-select,clipboard,matcher
+QuakeDD.keysym.M-u: perl:url-select:select_next
+QuakeDD.url-select.launcher: /usr/bin/qutebrowser
+QuakeDD.url-select.underline: true
+
+QuakeDD.perl-ext-common: default,matcher,clipboard
+QuakeDD.url-launcher: /usr/bin/qutebrowser
+QuakeDD.matcher.button: 1
+
+!QuakeDD.perl-ext-common: default,clipboard
+QuakeDD.iso14755: False
+QuakeDD.keysym.Shift-Control-C: perl:clipboard:copy
+QuakeDD.keysym.Shift-Control-V: perl:clipboard:paste
+
+URxvt*.depth: 32
+URxvt*.transparent: false
+urxvt.background: [100]#dbdbda
+urxvt.foreground: #000000
+URxvt.scrollBar: false
+!URxvt.font: xft:DejaVu Sans Mono for Powerline Book:size=10
+URxvt.font: xft:xos4 Terminess Powerline:size=9
+!URxvt.font: -xos4-terminesspowerline-medium-r-normal-*-12-*-*-*-*-*-*-*
+
+URxvt.perl-ext: default,url-select,clipboard,matcher
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/qutebrowser
+URxvt.url-select.underline: true
+
+URxvt.perl-ext-common: default,matcher,clipboard
+URxvt.url-launcher: /usr/bin/qutebrowser
+URxvt.matcher.button: 1
+
+!URxvt.perl-ext-common: default,clipboard
+URxvt.iso14755: False
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+
+! black
+URxvt.color0:       #151515
+URxvt.color8:       #505050
+
+! red
+URxvt.color1:       #ac4142
+URxvt.color9:       #ac4142
+
+! green
+URxvt.color2:       #588000
+URxvt.color10:      #588000
+
+! yellow
+URxvt.color3:       #f4bf75
+URxvt.color11:      #f4bf75
+
+! blue
+URxvt.color4:       #006c99
+URxvt.color12:      #006c99
+
+! magenta
+URxvt.color5:       #aa759f
+URxvt.color13:      #aa759f
+
+! cyan
+URxvt.color6:       #75b5aa
+URxvt.color14:      #75b5aa
+
+! white
+URxvt.color7:       #d0d0d0
+URxvt.color15:      #f5f5f5
+
+
+st.termname:    st-256color
+st.shell:       /bin/bash
+st.font:        xos4 Terminess Powerline:pixelsize=12:antialias=true:autohint=true;
+st.borderpx:     0
+st.xfps:         120
+st.actionfps:    30
+st.chscale:      1.0
+st.cwscale:      1.0
+st.opacity:      255
+st.background:   #dbdbda
+st.foreground:   #000000
+
+! black
+st.color0:       #151515
+st.color8:       #505050
+
+! red
+st.color1:       #ac4142
+st.color9:       #ac4142
+
+! green
+st.color2:       #588000
+st.color10:      #588000
+
+! yellow
+st.color3:       #f48e00
+st.color11:      #f48e00
+
+! blue
+st.color4:       #006c99
+st.color12:      #006c99
+
+! magenta
+st.color5:       #aa759f
+st.color13:      #aa759f
+
+! cyan
+st.color6:       #75b5aa
+st.color14:      #75b5aa
+
+! white
+st.color7:       #d0d0d0
+st.color15:      #f5f5f5
+
+
+! Other colors
+! URxvt*color0: black
+! URxvt*color1: red3
+! URxvt*color2: green3
+! URxvt*color3: yellow3
+! URxvt*color4: blue2
+! URxvt*color5: magenta3
+! URxvt*color6: cyan3
+! URxvt*color7: gray90
+! URxvt*color8: grey50
+! URxvt*color9: red
+! URxvt*color10: green
+! URxvt*color11: yellow
+! URxvt*color12: blue
+!URxvt*color12: cyan3
+!QuakeDD*color12: cyan3
+! URxvt*color13: magenta
+!URxvt*color13: green
+!QuakeDD*color13: green
+! URxvt*color14: cyan
+! URxvt*color15: white

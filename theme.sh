@@ -32,11 +32,12 @@ for dir in `ls $THEME_PATH`; do
         # reload dwm
         xdotool key Super+q
 
-        # termite
-        cp $THEME_PATH/$dir/termite $TERMITE_CONFIG
+        # st
+        cp $THEME_PATH/$dir/Xresource ~/.Xresources
+        xrdb -merge ~/.Xresources
 
         # let termite reload the config
-        for process in `pgrep termite`; do
+        for process in `pgrep -x st`; do
             kill -10 $process
         done
 
