@@ -11,7 +11,6 @@ DMENU_CONFIG="$HOME/.dotfiles/shortcuts/dmenu.sh"
 DUNST_CONFIG="$HOME/.config/dunst/dunstrc"
 DWM_PATH="/opt/dwm-custom-patches"
 DWM_CONFIG="/opt/dwm-custom-patches/config.h"
-TERMITE_CONFIG="$HOME/.config/termite/config"
 VIM_CONFIG="$HOME/.vimrc"
 
 
@@ -36,7 +35,7 @@ for dir in `ls $THEME_PATH`; do
         cp $THEME_PATH/$dir/Xresource ~/.Xresources
         xrdb -merge ~/.Xresources
 
-        # let termite reload the config
+        # let st reload the config
         for process in `pgrep -x st`; do
             kill -10 $process
         done

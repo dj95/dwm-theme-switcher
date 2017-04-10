@@ -78,7 +78,7 @@ static const Layout layouts[] = {
 static char dmenumon[2]          = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[]    = { "/home/neo/.dotfiles/shortcuts/dmenu.sh", NULL };
 static const char *projcmd[]     = { "/home/neo/.dotfiles/shortcuts/projmenu.sh", NULL };
-static const char *termcmd[]     = { "termite", NULL };
+static const char *termcmd[]     = { "st", NULL };
 static const char *filecmd[]     = { "pantheon-files", "--new-window", NULL };
 
 static const char *volbarcmd[]   = { "/home/neo/Projekte/Python/dwmbarpy/src/lbpyctl.py", "vol", NULL };
